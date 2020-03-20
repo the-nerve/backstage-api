@@ -1,0 +1,36 @@
+{
+  "name": "backstage-api",
+  "version": "1.0.0",
+  "description": "A behind-the-scenes serverless API and email service for The Nerve Theatre",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-nerve/backstage-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-nerve/backstage-api/issues"
+  },
+  "homepage": "https://github.com/the-nerve/backstage-api#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "serverless-offline": "^6.0.0"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.15.0",
+    "date-fns": "^2.11.0",
+    "dotenv": "^8.2.0",
+    "mjml": "^4.6.2",
+    "mustache": "^4.0.1",
+    "nodemailer": "^6.4.6"
+  }
+}
