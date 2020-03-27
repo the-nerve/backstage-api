@@ -61,12 +61,11 @@ provider:
 
 functions:
   ticketPurchased:
-    handler: endpoints/orders.complete
+    handler: endpoints/tickets.purchased
     events:
       - http:
-          path: orders/complete
+          path: tickets/purchased
           method: post
-
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

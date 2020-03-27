@@ -2,7 +2,6 @@
   "name": "backstage-api",
   "version": "1.0.0",
   "description": "A behind-the-scenes serverless API and email service for The Nerve Theatre",
-  "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

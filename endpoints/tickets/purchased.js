@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports.complete = async (event, context, callback) => {
+module.exports.purchased = async (event, context, callback) => {
 
    return {
         statusCode: 200,
