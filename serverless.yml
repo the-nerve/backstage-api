@@ -10,12 +10,13 @@
 #    docs.serverless.com
 #
 # Happy Coding!
-
 service: backstage-api
+
 # app and org for use with dashboard.serverless.com
 app: backstage-api
 org: codingwithchris
 
+# Configure Primary Serverless Function Provider
 provider:
   name: aws
   region: us-east-2
@@ -24,38 +25,10 @@ provider:
   timeout: 10 # the timeout is 10 seconds (default is 6 seconds)
   stage: dev
 
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
-
+# Configure API Endpoint Handler Functions
 functions:
   ticketPurchased:
-    handler: endpoints/tickets/purchased.purchased
+    handler: endpoints/tickets/purchased
     events:
       - http:
           path: tickets/purchased
@@ -79,7 +52,11 @@ custom:
     certificateName: '*.nervetheatre.org'
     createRoute53Record: false
 
-#    The following are a few example events you can configure
+plugins:
+- serverless-offline # adding the plugin to be able to run the offline emulation
+- serverless-domain-manager # Letserverles us use a custom domain for our API
+
+#    The following are a few example events you can configure for api functions.
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
 #    events:
@@ -130,7 +107,3 @@ custom:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
-
-plugins:
-- serverless-offline # adding the plugin to be able to run the offline emulation
-- serverless-domain-manager # Letserverles us use a custom domain for our API

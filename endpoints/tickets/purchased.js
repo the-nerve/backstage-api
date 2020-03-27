@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.purchased = async (event, context) => {
+module.exports = async (event, context) => {
    return {
         statusCode: 200,
         body: JSON.stringify(
