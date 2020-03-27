@@ -16,20 +16,13 @@ service: backstage-api
 app: backstage-api
 org: codingwithchris
 
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-# frameworkVersion: "=X.X.X"
-
 provider:
   name: aws
   region: us-east-2
   runtime: nodejs12.x
   memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
   timeout: 10 # the timeout is 10 seconds (default is 6 seconds)
-
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+  stage: dev
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -73,6 +66,15 @@ functions:
         POSTMARK_USER: ${param:POSTMARK_USER}
         POSTMARK_PASS: ${param:POSTMARK_USER}
         MAILCHIMP_API_KEY: ${param:MAILCHIMP_API_KEY}
+
+custom:
+  customDomain:
+    endpointType: regional
+    domainName: backstage.nervetheatre.org
+    basePath: ''
+    stage: ${self:provider.stage}
+    certificateName: '*.nervetheatre.org'
+    createRoute53Record: false
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -128,3 +130,4 @@ functions:
 
 plugins:
 - serverless-offline # adding the plugin to be able to run the offline emulation
+- serverless-domain-manager # Lets us use a custom domain for our API
