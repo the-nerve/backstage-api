@@ -22,6 +22,7 @@ org: codingwithchris
 
 provider:
   name: aws
+  region: us-east-2
   runtime: nodejs12.x
   memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
   timeout: 10 # the timeout is 10 seconds (default is 6 seconds)
@@ -66,6 +67,12 @@ functions:
       - http:
           path: tickets/purchased
           method: post
+    environment:
+        MAILTRAP_USER: ${param:MAILTRAP_USER}
+        MAILTRAP_PASS: ${param:MAILTRAP_PASS}
+        POSTMARK_USER: ${param:POSTMARK_USER}
+        POSTMARK_PASS: ${param:POSTMARK_USER}
+        MAILCHIMP_API_KEY: ${param:MAILCHIMP_API_KEY}
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
