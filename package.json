@@ -10,9 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/the-nerve/backstage-api.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "theatre",
+    "tickets",
+    "snipcart",
+    "serverless",
+    "node",
+    "mjml",
+    "nodemailer",
+    "postmark",
+    "email",
+    "api"
+  ],
+  "author": "Chris Hahn <chris@chrishahn.me>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/the-nerve/backstage-api/issues"
   },
