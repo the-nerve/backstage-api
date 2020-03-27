@@ -30,15 +30,15 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1",
-    "serverless-offline": "^6.0.0",
+    "prettier": "^2.0.2",
+    "serverless-offline": "^6.1.2",
     "serverless-domain-manager": "^3.3.1"
   },
   "dependencies": {
-    "@sentry/node": "^5.15.0",
-    "date-fns": "^2.11.0",
+    "@sentry/node": "^5.15.2",
+    "date-fns": "^2.11.1",
     "dotenv": "^8.2.0",
     "mjml": "^4.6.2",
     "mustache": "^4.0.1",

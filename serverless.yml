@@ -55,18 +55,21 @@ provider:
 
 functions:
   ticketPurchased:
-    handler: endpoints/tickets.purchased
+    handler: endpoints/tickets/purchased.purchased
     events:
       - http:
           path: tickets/purchased
           method: post
-    environment:
-        MAILTRAP_USER: ${param:MAILTRAP_USER}
-        MAILTRAP_PASS: ${param:MAILTRAP_PASS}
-        POSTMARK_USER: ${param:POSTMARK_USER}
-        POSTMARK_PASS: ${param:POSTMARK_USER}
-        MAILCHIMP_API_KEY: ${param:MAILCHIMP_API_KEY}
 
+# COnfigure environment secrets. Shhhhh....
+environment:
+    MAILTRAP_USER: ${param:MAILTRAP_USER}
+    MAILTRAP_PASS: ${param:MAILTRAP_PASS}
+    POSTMARK_USER: ${param:POSTMARK_USER}
+    POSTMARK_PASS: ${param:POSTMARK_USER}
+    MAILCHIMP_API_KEY: ${param:MAILCHIMP_API_KEY}
+
+# Configure our API to use a custom domain. (must also ALIAS S3 endpoint in Cloudflare)
 custom:
   customDomain:
     endpointType: regional
@@ -130,4 +133,4 @@ custom:
 
 plugins:
 - serverless-offline # adding the plugin to be able to run the offline emulation
-- serverless-domain-manager # Lets us use a custom domain for our API
+- serverless-domain-manager # Letserverles us use a custom domain for our API
