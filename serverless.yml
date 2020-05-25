@@ -28,7 +28,7 @@ provider:
 # Configure API Endpoint Handler Functions
 functions:
   ticketPurchased:
-    handler: endpoints/tickets/purchased
+    handler: endpoints/tickets/purchased.purchased
     events:
       - http:
           path: tickets/purchased

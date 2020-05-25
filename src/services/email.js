@@ -40,14 +40,14 @@ const transport = nodemailer.createTransport(transportConfig);
  *
  * @param {*} param0
  */
-const getHydratedPlainText = ({ templateName, data }) => { };
+const getHydratedPlainText = ({ template, data }) => { };
 
 /**
  *
  * @param {*} templateName
  * @param {*} data
  */
-const getHydratedEmailTemplate = ({ templateName, data }) => { };
+const getHydratedTemplate = ({ template, data }) => { };
 
 /**
  *
@@ -58,7 +58,7 @@ const composeEmail = () => ({
     to: `chahn1692@gmail.com`,
     subject: `This is a test`,
     text: `hello world`, // getHydratedPlainText( data ),
-    html: `<h1>Hello world</h1>`, // getHydratedEmailTemplate( data )
+    html: `<h1>Hello world</h1>`, // getHydratedTemplate( data )
 });
 
 /**
