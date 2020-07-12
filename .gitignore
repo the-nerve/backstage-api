@@ -7,3 +7,8 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# Yarm Directories
+.yarn
+.pnp.js
+.yarnrc.yml
