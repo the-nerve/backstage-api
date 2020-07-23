@@ -4,4 +4,17 @@
 // X-Snipcart-RequestToken
 // https://app.snipcart.com/api/requestvalidation/{token}
 
-export const isValidRequest = () => {}
+
+import fetch from 'isomorphic-unfetch';
+
+/**
+ *
+ * @param {*} token
+ */
+export const isValidRequest = requestToken => {
+
+    const validationURL = `https://app.snipcart.com/api/requestvalidation/${requestToken}`;
+
+    await fetch( validationURL ).then( result => result.json() ).then( data => data );
+
+}
