@@ -10,11 +10,11 @@
 #    docs.serverless.com
 #
 # Happy Coding!
-service: backstage-api
+service: nerve-api
 
 # app and org for use with dashboard.serverless.com
-app: backstage-api
-org: codingwithchris
+app: nerve-api
+org: thenerve
 
 # Configure Primary Serverless Function Provider
 provider:
@@ -53,15 +53,15 @@ environment:
 custom:
   customDomain:
     endpointType: regional
-    domainName: backstage.nervetheatre.org
+    domainName: api.nrv.app
     basePath: ''
     stage: ${self:provider.stage}
-    certificateName: '*.nervetheatre.org'
+    certificateName: '*.nrv.app'
     createRoute53Record: false
 
 plugins:
 - serverless-offline # adding the plugin to be able to run the offline emulation
-- serverless-domain-manager # Letserverles us use a custom domain for our API
+- serverless-domain-manager # Let serverless us use a custom domain for our API
 
 #    The following are a few example events you can configure for api functions.
 #    NOTE: Please make sure to change your handler code to work with those events

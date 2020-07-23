@@ -1,5 +1,5 @@
 {
-  "name": "backstage-api",
+  "name": "nerve-api",
   "version": "1.0.0",
   "description": "A behind-the-scenes serverless API and email service for The Nerve Theatre",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-nerve/backstage-api.git"
+    "url": "git+https://github.com/the-nerve/nerve.api.git"
   },
   "keywords": [
     "theatre",
@@ -24,9 +24,9 @@
   "author": "Chris Hahn <chris@chrishahn.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/the-nerve/backstage-api/issues"
+    "url": "https://github.com/the-nerve/nerve.api/issues"
   },
-  "homepage": "https://github.com/the-nerve/backstage-api#readme",
+  "homepage": "https://github.com/the-nerve/nerve.api#readme",
   "devDependencies": {
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -34,8 +34,6 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5",
     "serverless": "^1.75.1",
     "serverless-domain-manager": "^4.2.0",
