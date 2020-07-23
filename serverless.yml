@@ -27,20 +27,27 @@ provider:
 
 # Configure API Endpoint Handler Functions
 functions:
-  ticketPurchased:
-    handler: endpoints/tickets/purchased.purchased
+  ticketPurchase:
+    handler: endpoints/tickets/purchase.purchase
     events:
       - http:
-          path: tickets/purchased
+          path: tickets/purchase
           method: post
+  ticketRefund:
+    handler: endpoints/tickets/refund.refund
+    events:
+      - http:
+          path: tickets/refund/{id}
+          method: put
 
-# COnfigure environment secrets. Shhhhh....
+# Configure environment secrets. Shhhhh....
 environment:
     MAILTRAP_USER: ${param:MAILTRAP_USER}
     MAILTRAP_PASS: ${param:MAILTRAP_PASS}
     POSTMARK_USER: ${param:POSTMARK_USER}
     POSTMARK_PASS: ${param:POSTMARK_USER}
     MAILCHIMP_API_KEY: ${param:MAILCHIMP_API_KEY}
+    MONGODB_CONNECTION_KEY: ${param:MONGODB_CONNECTION_KEY}
 
 # Configure our API to use a custom domain. (must also ALIAS S3 endpoint in Cloudflare)
 custom:
